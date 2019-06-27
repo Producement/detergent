@@ -27,15 +27,45 @@ function Top() {
   );
 }
 
+const Card = ({
+  image,
+  title,
+  description,
+  brand,
+}: {
+  image: string;
+  title: string;
+  description: string;
+  brand: string;
+}) => {
+  return (
+    <Link to="/details">
+      <div className="card d-flex flex-row">
+        <div className="justify-content-center">
+          <img className="card-image mr-3" src={image} alt={title} />
+        </div>
+        <div className="d-flex flex-column flex-grow-1">
+          <h2>{title}</h2>
+          <div className="mb-3">
+            {brand} &#183; {description}
+          </div>
+          <ProgressBar />
+        </div>
+      </div>
+    </Link>
+  );
+};
+
 function Cards() {
   return (
     <div className="container mb-5">
       <div className="card-columns mt-3">
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={platinum} alt="Card image cap" />
-          </div>
-        </Link>
+        <Card
+          image={platinum}
+          title="Platinum All In One"
+          brand="Dreft"
+          description="Dishwasher tablets"
+        />
         <Link to="/details">
           <div className="card">
             <img className="card-img-top" src={family} alt="Card image cap" />
