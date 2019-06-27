@@ -12,7 +12,18 @@ import pods from './img/fairy-non-bio-pods-fairy.webp';
 import soft from './img/fairy-fabric-softener-original-fairy.webp';
 import SimpleBottomNavigation from './SimpleBottomNavigation';
 
-function Root() {
+function Top() {
+  return (
+    <div className="container pt-5 pb-4 bg-white top">
+      <h1>Hi Emilee,</h1>
+      <p>You're running out of Draft Pods soon.</p>
+      <button className="btn btn-outline-primary btn-block">Replenish all products</button>
+      <button className="btn btn-primary btn-block">Replenish Draft Pods</button>
+    </div>
+  );
+}
+
+function Cards() {
   return (
     <div className="container mb-5">
       <div className="card-columns mt-3">
@@ -53,6 +64,15 @@ function Root() {
           <img className="card-img-top" src={soft} alt="Card image cap" />
         </div>
       </div>
+    </div>
+  );
+}
+
+function Root() {
+  return (
+    <div>
+      <Top />
+      <Cards />
       <SimpleBottomNavigation />
     </div>
   );
