@@ -49,7 +49,7 @@ const Card = ({
           <div className="mb-3">
             {brand} &#183; {description}
           </div>
-          <ProgressBar />
+          <ProgressBar now={10} variant="danger" />
         </div>
       </div>
     </Link>
