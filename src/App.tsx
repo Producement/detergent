@@ -14,7 +14,7 @@ import soft from './img/fairy-fabric-softener-original-fairy.webp';
 function Root() {
   return (
     <div className="container">
-      <div className="card-columns">
+      <div className="card-columns mt-3">
         <div className="card">
           <img className="card-img-top" src={platinum} alt="Card image cap" />
         </div>
