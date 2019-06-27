@@ -11,6 +11,7 @@ import all from './img/fairy-platinum-all-in-one-fairy.webp';
 import pods from './img/fairy-non-bio-pods-fairy.webp';
 import soft from './img/fairy-fabric-softener-original-fairy.webp';
 import tablet from './img/tablet.png';
+import { AnimatedSwitch, spring } from 'react-router-transition';
 
 import SimpleBottomNavigation from './SimpleBottomNavigation';
 import ProgressBar from 'react-bootstrap/ProgressBar';
@@ -107,7 +108,7 @@ function Root() {
 
 function Details() {
   return (
-    <div className="container bg-white mb-5 h-100">
+    <div className="container bg-white h-100">
       <Link className="text-dark" to="/">
         <div className="float-right mt-3 x">✕</div>
       </Link>
@@ -136,14 +137,39 @@ function Details() {
   );
 }
 
+function glide(val: any) {
+  return spring(val, {
+    stiffness: 125,
+    damping: 16,
+  });
+}
+
+const pageTransitions = {
+  atEnter: {
+    offset: 100,
+  },
+  atLeave: {
+    offset: glide(-100),
+  },
+  atActive: {
+    offset: glide(0),
+  },
+};
+
 function App() {
   return (
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <Switch>
+        <AnimatedSwitch
+          {...pageTransitions}
+          mapStyles={(styles: any) => ({
+            transform: `translateX(${styles.offset}%)`,
+          })}
+          className="route-wrapper"
+        >
           <Route path="/details" component={Details} />
           <Route path="/" component={Root} />
-        </Switch>
+        </AnimatedSwitch>
       </ConnectedRouter>
     </Provider>
   );

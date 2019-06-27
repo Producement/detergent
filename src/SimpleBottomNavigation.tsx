@@ -8,7 +8,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 
 const useStyles = makeStyles({
   root: {
-    position: 'fixed',
+    position: 'sticky',
     left: 0,
     bottom: 0,
     width: '100%',
