@@ -6,8 +6,10 @@ $body-bg: #f5f5f5;
 @import '~manrope/index.css';
 
 body,
-html {
+html,
+#root {
   font-family: 'Manrope', sans-serif;
+  height: 100%;
 }
 
 .card-columns {
@@ -20,9 +22,11 @@ html {
   border: 0;
   padding: 16px;
   display: inline-block;
+  cursor: pointer;
 }
 
-button:focus {
+button:focus,
+.btn:focus {
   outline: none;
 }
 
@@ -32,6 +36,11 @@ button:focus {
 
 h1 {
   font-weight: 800;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 1.5rem;
 }
 
 p {
@@ -50,12 +59,49 @@ p {
   background-color: #4d00ca;
 }
 
+.btn-primary:hover {
+  background-color: #4d00ca;
+  border-color: #4d00ca;
+  opacity: 0.9;
+}
+
 .btn-outline-primary {
   color: #4d00ca;
+}
+
+.btn-outline-primary:hover {
+  border-color: #4d00ca;
+  background-color: #4d00ca;
+  opacity: 0.9;
 }
 
 .btn-block {
   text-align: left;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.x {
+  height: 44px;
+  width: 44px;
+  border-radius: 16px;
+  background-color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.x:hover {
+  cursor: pointer;
+}
+
+.details__progress,
+.details__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress {
+  height: 0.25rem;
 }
