@@ -12,6 +12,7 @@ const useStyles = makeStyles({
     left: 0,
     bottom: 0,
     width: '100%',
+    boxShadow: '0 -8px 20px 0 rgba(0, 0, 0, 0.1)',
   },
 });
 
