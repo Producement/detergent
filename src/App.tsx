@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { ConnectedRouter } from 'connected-react-router';
+import store, { history } from './store';
+import { Provider } from 'react-redux';
+import { Route } from 'react-router-dom';
 
-function App() {
+function Root() {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +24,16 @@ function App() {
         </a>
       </header>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <Route path="/" component={Root} />
+      </ConnectedRouter>
+    </Provider>
   );
 }
 
