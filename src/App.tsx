@@ -1,28 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { ConnectedRouter } from 'connected-react-router';
 import store, { history } from './store';
 import { Provider } from 'react-redux';
 import { Route } from 'react-router-dom';
+import platinum from './img/fairy-platinum-washing-up-liquid-fairy.webp';
+import family from './img/fairy-family-pack-fairy.webp';
+import lemon from './img/fairy-platinum-washing-up-liquid-lemon.webp';
+import all from './img/fairy-platinum-all-in-one-fairy.webp';
+import pods from './img/fairy-non-bio-pods-fairy.webp';
+import soft from './img/fairy-fabric-softener-original-fairy.webp';
 
 function Root() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="card-columns">
+        <div className="card">
+          <img className="card-img-top" src={platinum} alt="Card image cap" />
+        </div>
+        <div className="card">
+          <img className="card-img-top" src={family} alt="Card image cap" />
+        </div>
+        <div className="card">
+          <img className="card-img-top" src={lemon} alt="Card image cap" />
+        </div>
+        <div className="card">
+          <img className="card-img-top" src={all} alt="Card image cap" />
+        </div>
+        <div className="card">
+          <img className="card-img-top" src={pods} alt="Card image cap" />
+        </div>
+        <div className="card">
+          <img className="card-img-top" src={soft} alt="Card image cap" />
+        </div>
+      </div>
     </div>
   );
 }

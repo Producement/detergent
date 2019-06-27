@@ -1,1 +1,23 @@
+$body-bg: #f5f5f5;
+//$body-color: #262627;
+
 @import '~bootstrap/scss/bootstrap.scss';
+
+@import '~manrope/index.css';
+
+body,
+html {
+  font-family: 'Manrope', sans-serif;
+}
+
+.card-columns {
+  column-count: 2;
+}
+
+.card {
+  border-radius: 16px;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+  border: 0;
+  padding: 16px;
+  display: inline-block;
+}
