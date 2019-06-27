@@ -10,10 +10,11 @@ import lemon from './img/fairy-platinum-washing-up-liquid-lemon.webp';
 import all from './img/fairy-platinum-all-in-one-fairy.webp';
 import pods from './img/fairy-non-bio-pods-fairy.webp';
 import soft from './img/fairy-fabric-softener-original-fairy.webp';
+import SimpleBottomNavigation from './SimpleBottomNavigation';
 
 function Root() {
   return (
-    <div className="container">
+    <div className="container mb-5">
       <div className="card-columns mt-3">
         <div className="card">
           <img className="card-img-top" src={platinum} alt="Card image cap" />
@@ -33,7 +34,26 @@ function Root() {
         <div className="card">
           <img className="card-img-top" src={soft} alt="Card image cap" />
         </div>
+        <div className="card">
+          <img className="card-img-top" src={platinum} alt="Card image cap" />
+        </div>
+        <div className="card">
+          <img className="card-img-top" src={family} alt="Card image cap" />
+        </div>
+        <div className="card">
+          <img className="card-img-top" src={lemon} alt="Card image cap" />
+        </div>
+        <div className="card">
+          <img className="card-img-top" src={all} alt="Card image cap" />
+        </div>
+        <div className="card">
+          <img className="card-img-top" src={pods} alt="Card image cap" />
+        </div>
+        <div className="card">
+          <img className="card-img-top" src={soft} alt="Card image cap" />
+        </div>
       </div>
+      <SimpleBottomNavigation />
     </div>
   );
 }
