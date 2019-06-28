@@ -277,6 +277,30 @@ function Replenish() {
   );
 }
 
+function Orders() {
+  return (
+    <div className="orders">
+      <div className="container pt-5 pb-4 bg-white top">
+        <h2>Orders</h2>
+      </div>
+      <div className="container min-vh-100 mt-3" />
+      <SimpleBottomNavigation />
+    </div>
+  );
+}
+
+function Settings() {
+  return (
+    <div className="settings">
+      <div className="container pt-5 pb-4 bg-white top">
+        <h2>Settings</h2>
+      </div>
+      <div className="container min-vh-100 mt-3" />
+      <SimpleBottomNavigation />
+    </div>
+  );
+}
+
 function glide(val: any) {
   return spring(val, {
     stiffness: 125,
@@ -309,6 +333,8 @@ function App() {
         >
           <Route path="/details" component={Details} />
           <Route path="/replenish" component={Replenish} />
+          <Route path="/orders" component={Orders} />
+          <Route path="/settings" component={Settings} />
           <Route path="/" component={Root} />
         </AnimatedSwitch>
       </ConnectedRouter>

@@ -5,6 +5,9 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import ShoppingIcon from '@material-ui/icons/ShoppingCart';
 import AppsIcon from '@material-ui/icons/Apps';
 import SettingsIcon from '@material-ui/icons/Settings';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { push } from 'connected-react-router';
 
 const useStyles = makeStyles({
   root: {
@@ -29,17 +32,15 @@ const buttonStyles = makeStyles({
   },
 });
 
-export default function SimpleBottomNavigation() {
+function SimpleBottomNavigation({ value, onNavigation }: { value: string; onNavigation: any }) {
   const classes = useStyles();
   const buttonClasses = buttonStyles();
-
-  const [value, setValue] = React.useState(1);
 
   return (
     <BottomNavigation
       value={value}
       onChange={(event, newValue) => {
-        setValue(newValue);
+        onNavigation(newValue);
       }}
       showLabels
       className={classes.root}
@@ -51,6 +52,7 @@ export default function SimpleBottomNavigation() {
           selected: buttonClasses.selected,
         }}
         icon={<ShoppingIcon />}
+        value="/orders"
       />
       <BottomNavigationAction
         classes={{
@@ -59,6 +61,7 @@ export default function SimpleBottomNavigation() {
           selected: buttonClasses.selected,
         }}
         icon={<AppsIcon />}
+        value="/"
       />
       <BottomNavigationAction
         classes={{
@@ -67,7 +70,25 @@ export default function SimpleBottomNavigation() {
           selected: buttonClasses.selected,
         }}
         icon={<SettingsIcon />}
+        value="/settings"
       />
     </BottomNavigation>
   );
 }
+
+const mapStateToProps = (state: any) => ({
+  value: state.router.location.pathname,
+});
+
+const mapDispatchToProps = (dispatch: any) =>
+  bindActionCreators(
+    {
+      onNavigation: (link: string) => push(link),
+    },
+    dispatch,
+  );
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SimpleBottomNavigation);
