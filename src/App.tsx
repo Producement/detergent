@@ -32,11 +32,13 @@ const Card = ({
   title,
   description,
   brand,
+  amount,
 }: {
   image: string;
   title: string;
   description: string;
   brand: string;
+  amount: number;
 }) => {
   return (
     <Link to="/details">
@@ -49,7 +51,10 @@ const Card = ({
           <div className="mb-3">
             {brand} &#183; {description}
           </div>
-          <ProgressBar now={10} variant="danger" />
+          <ProgressBar
+            now={amount}
+            variant={amount <= 20 ? 'danger' : amount <= 50 ? 'warning' : 'success'}
+          />
         </div>
       </div>
     </Link>
@@ -58,69 +63,92 @@ const Card = ({
 
 function Cards() {
   return (
-    <div className="container mb-5">
+    <div className="container mb-1">
       <div className="card-columns mt-3">
         <Card
           image={platinum}
+          title="Platinum Washing Up Liquid"
+          brand="Dreft"
+          description="Dishwasher tablets"
+          amount={10}
+        />
+        <Card
+          image={family}
+          title="Platinum Family Pack"
+          brand="Dreft"
+          description="Dishwasher tablets"
+          amount={30}
+        />
+        <Card
+          image={lemon}
+          title="Platinum Lemon"
+          brand="Dreft"
+          description="Dishwasher tablets"
+          amount={40}
+        />
+        <Card
+          image={all}
           title="Platinum All In One"
           brand="Dreft"
           description="Dishwasher tablets"
+          amount={60}
         />
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={family} alt="Card image cap" />
-          </div>
-        </Link>
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={lemon} alt="Card image cap" />
-          </div>
-        </Link>
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={all} alt="Card image cap" />
-          </div>
-        </Link>
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={pods} alt="Card image cap" />
-          </div>
-        </Link>
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={soft} alt="Card image cap" />
-          </div>
-        </Link>
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={platinum} alt="Card image cap" />
-          </div>
-        </Link>
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={family} alt="Card image cap" />
-          </div>
-        </Link>
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={lemon} alt="Card image cap" />
-          </div>
-        </Link>
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={all} alt="Card image cap" />
-          </div>
-        </Link>
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={pods} alt="Card image cap" />
-          </div>
-        </Link>
-        <Link to="/details">
-          <div className="card">
-            <img className="card-img-top" src={soft} alt="Card image cap" />
-          </div>
-        </Link>
+        <Card
+          image={pods}
+          title="Non Bio Pods"
+          brand="Dreft"
+          description="Dishwasher tablets"
+          amount={70}
+        />
+        <Card
+          image={soft}
+          title="Fabric Softener"
+          brand="Dreft"
+          description="Dishwasher tablets"
+          amount={80}
+        />
+        <Card
+          image={platinum}
+          title="Platinum Washing Up Liquid"
+          brand="Dreft"
+          description="Dishwasher tablets"
+          amount={10}
+        />
+        <Card
+          image={family}
+          title="Platinum Family Pack"
+          brand="Dreft"
+          description="Dishwasher tablets"
+          amount={30}
+        />
+        <Card
+          image={lemon}
+          title="Platinum Lemon"
+          brand="Dreft"
+          description="Dishwasher tablets"
+          amount={40}
+        />
+        <Card
+          image={all}
+          title="Platinum All In One"
+          brand="Dreft"
+          description="Dishwasher tablets"
+          amount={60}
+        />
+        <Card
+          image={pods}
+          title="Non Bio Pods"
+          brand="Dreft"
+          description="Dishwasher tablets"
+          amount={70}
+        />
+        <Card
+          image={soft}
+          title="Fabric Softener"
+          brand="Dreft"
+          description="Dishwasher tablets"
+          amount={80}
+        />
       </div>
     </div>
   );
