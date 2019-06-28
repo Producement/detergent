@@ -10,6 +10,8 @@ import oral from './img/Logo_Oral_4x.png';
 import tide from './img/Logo_Tide_4x.png';
 import tablet from './img/tablet.png';
 import success from './img/success.svg';
+import twodays from './img/2days_4x.png';
+
 import { AnimatedSwitch, spring } from 'react-router-transition';
 
 import SimpleBottomNavigation from './SimpleBottomNavigation';
@@ -263,13 +265,39 @@ function Replenish() {
   );
 }
 
+const Order = ({
+  image,
+  title,
+  description,
+}: {
+  image: string;
+  title: string;
+  description: string;
+}) => {
+  return (
+    <div className="container min-vh-100 mt-3">
+      <div className="card d-flex">
+        <div className="d-flex flex-row">
+          <div className="d-flex flex-column flex-grow-1 justify-content-center">
+            <h2>{title}</h2>
+            <div>{description}</div>
+          </div>
+          <div className="justify-content-center">
+            <img className="card-image ml-3" src={image} alt="2 days" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 function Orders() {
   return (
     <div className="orders">
       <div className="container pt-5 pb-4 bg-white top">
         <h2>Orders</h2>
       </div>
-      <div className="container min-vh-100 mt-3" />
+      <Order title="Oral B and Ambi Pur" description="Arriving in 2 days at 9:45" image={twodays} />
       <SimpleBottomNavigation />
     </div>
   );
