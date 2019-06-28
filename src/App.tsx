@@ -69,7 +69,7 @@ function Cards() {
           image={platinum}
           title="Platinum Washing Up Liquid"
           brand="Dreft"
-          description="Dishwasher tablets"
+          description="Washing up liquid"
           amount={10}
         />
         <Card
@@ -83,7 +83,7 @@ function Cards() {
           image={lemon}
           title="Platinum Lemon"
           brand="Dreft"
-          description="Dishwasher tablets"
+          description="Washing up liquid"
           amount={40}
         />
         <Card
@@ -104,14 +104,14 @@ function Cards() {
           image={soft}
           title="Fabric Softener"
           brand="Dreft"
-          description="Dishwasher tablets"
+          description="Fabric softener"
           amount={80}
         />
         <Card
           image={platinum}
           title="Platinum Washing Up Liquid"
           brand="Dreft"
-          description="Dishwasher tablets"
+          description="Washing up liquid"
           amount={10}
         />
         <Card
@@ -125,7 +125,7 @@ function Cards() {
           image={lemon}
           title="Platinum Lemon"
           brand="Dreft"
-          description="Dishwasher tablets"
+          description="Washing up liquid"
           amount={40}
         />
         <Card
@@ -146,7 +146,7 @@ function Cards() {
           image={soft}
           title="Fabric Softener"
           brand="Dreft"
-          description="Dishwasher tablets"
+          description="Fabric softener"
           amount={80}
         />
       </div>
