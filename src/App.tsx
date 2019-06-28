@@ -243,10 +243,10 @@ function ReplenishTop() {
 
 function Replenish() {
   return (
-    <div>
+    <div className="replenish h-100">
       <ReplenishTop />
       <div className="container">
-        <div className="card-columns mt-3">
+        <div className="card-columns pt-3">
           <Card
             image={platinum}
             title="Platinum Washing Up Liquid"
@@ -255,6 +255,22 @@ function Replenish() {
             amount={10}
             refill={90}
           />
+        </div>
+      </div>
+      <div className="fixed-bottom">
+        <div className="container replenish__bottom">
+          <div className="row pt-2 pb-2">
+            <div className="col-6">
+              <Link to="/" className="btn btn-outline-light btn-block text-right">
+                Go back
+              </Link>
+            </div>
+            <div className="col-6">
+              <Link to="/confirm" className="btn btn-light btn-block">
+                Confirm order
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
