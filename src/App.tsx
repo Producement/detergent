@@ -2,7 +2,7 @@ import React from 'react';
 import { ConnectedRouter } from 'connected-react-router';
 import store, { history } from './store';
 import { Provider } from 'react-redux';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import ambi from './img/Logo_Ambi_4x.png';
 import ariel from './img/Logo_Ariel_4x.png';
 import dreft from './img/Logo_Dreft_4x.png';
@@ -11,6 +11,7 @@ import tide from './img/Logo_Tide_4x.png';
 import tablet from './img/tablet.png';
 import success from './img/success.svg';
 import twodays from './img/2days_4x.png';
+import fourtyeight from './img/48min_4x.png';
 
 import { AnimatedSwitch, spring } from 'react-router-transition';
 
@@ -271,22 +272,24 @@ const Order = ({
   image,
   title,
   description,
+  bg,
+  text,
 }: {
   image: string;
   title: string;
   description: string;
+  bg?: string;
+  text?: string;
 }) => {
   return (
-    <div className="container min-vh-100 mt-3">
-      <div className="card d-flex">
-        <div className="d-flex flex-row">
-          <div className="d-flex flex-column flex-grow-1 justify-content-center">
-            <h2>{title}</h2>
-            <div>{description}</div>
-          </div>
-          <div className="justify-content-center">
-            <img className="card-image ml-3" src={image} alt="2 days" />
-          </div>
+    <div className={`card d-flex bg-${bg}`}>
+      <div className="d-flex flex-row">
+        <div className="d-flex flex-column flex-grow-1 justify-content-center">
+          <h2 className={`text-${text}`}>{title}</h2>
+          <div className={`text-${text}`}>{description}</div>
+        </div>
+        <div className="justify-content-center">
+          <img className="card-image ml-3" src={image} alt="2 days" />
         </div>
       </div>
     </div>
@@ -299,7 +302,20 @@ function Orders() {
       <div className="container pt-5 pb-4 bg-white top">
         <h2>Orders</h2>
       </div>
-      <Order title="Oral B and Ambi Pur" description="Arriving in 2 days at 9:45" image={twodays} />
+      <div className="container card-columns min-vh-100 mt-3">
+        <Order
+          title="Dreft, Tide and 2 more"
+          description="Arriving tonight at 18:22"
+          image={fourtyeight}
+          bg="blue"
+          text="light"
+        />
+        <Order
+          title="Oral B and Ambi Pur"
+          description="Arriving in 2 days at 9:45"
+          image={twodays}
+        />
+      </div>
       <SimpleBottomNavigation />
     </div>
   );
