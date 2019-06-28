@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { ConnectedRouter } from 'connected-react-router';
 import store, { history } from './store';
 import { Provider } from 'react-redux';
@@ -21,11 +20,35 @@ function Top() {
     <div className="container pt-5 pb-4 bg-white top">
       <h1>Hi Emilee,</h1>
       <p>You're running out of Draft Pods soon.</p>
-      <button className="btn btn-outline-primary btn-block">Replenish all products</button>
-      <button className="btn btn-primary btn-block">Replenish Draft Pods</button>
+      <Link to="/replenish" className="btn btn-outline-primary btn-block">
+        Replenish all products
+      </Link>
+      <Link to="/replenish" className="btn btn-primary btn-block">
+        Replenish Draft Pods
+      </Link>
     </div>
   );
 }
+
+const Progress = ({
+  amount,
+  refill,
+  className,
+}: {
+  amount: number;
+  refill?: number;
+  className?: string;
+}) => {
+  return (
+    <ProgressBar className={className}>
+      <ProgressBar
+        now={amount}
+        variant={amount <= 20 ? 'danger' : amount <= 50 ? 'warning' : 'success'}
+      />
+      {refill && <ProgressBar now={refill} />}
+    </ProgressBar>
+  );
+};
 
 const Card = ({
   image,
@@ -33,29 +56,37 @@ const Card = ({
   description,
   brand,
   amount,
+  refill,
 }: {
   image: string;
   title: string;
   description: string;
   brand: string;
   amount: number;
+  refill?: number;
 }) => {
   return (
     <Link to="/details">
-      <div className="card d-flex flex-row">
-        <div className="justify-content-center">
-          <img className="card-image mr-3" src={image} alt={title} />
-        </div>
-        <div className="d-flex flex-column flex-grow-1">
-          <h2>{title}</h2>
-          <div className="mb-3">
-            {brand} &#183; {description}
+      <div className="card d-flex">
+        <div className="d-flex flex-row">
+          <div className="justify-content-center">
+            <img className="card-image mr-3" src={image} alt={title} />
           </div>
-          <ProgressBar
-            now={amount}
-            variant={amount <= 20 ? 'danger' : amount <= 50 ? 'warning' : 'success'}
-          />
+          <div className="d-flex flex-column flex-grow-1">
+            <h2>{title}</h2>
+            <div className="mb-3">
+              {brand} &#183; {description}
+            </div>
+            {!refill && <Progress amount={amount} />}
+          </div>
+          {refill && (
+            <div className="d-flex flex-column">
+              <div className="card__price mb-1">12.49€</div>
+              <div className="card__amount">for 27 tabs</div>
+            </div>
+          )}
         </div>
+        {refill && <Progress amount={amount} refill={refill} className="mt-3" />}
       </div>
     </Link>
   );
@@ -195,6 +226,41 @@ function Details() {
   );
 }
 
+function ReplenishTop() {
+  return (
+    <div className="container pt-5 pb-4 bg-white top">
+      <h2>Replenish products</h2>
+      <p className="mt-3 mb-3">
+        The following products will be replenished to an estimated one month supply
+      </p>
+      <div className="replenish__bottom_line mt-1">
+        <div className="replenish__total">Order total</div>
+        <div className="replenish__price">12.49€</div>
+      </div>
+    </div>
+  );
+}
+
+function Replenish() {
+  return (
+    <div>
+      <ReplenishTop />
+      <div className="container">
+        <div className="card-columns mt-3">
+          <Card
+            image={platinum}
+            title="Platinum Washing Up Liquid"
+            brand="Dreft"
+            description="Washing up liquid"
+            amount={10}
+            refill={90}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function glide(val: any) {
   return spring(val, {
     stiffness: 125,
@@ -226,6 +292,7 @@ function App() {
           className="route-wrapper"
         >
           <Route path="/details" component={Details} />
+          <Route path="/replenish" component={Replenish} />
           <Route path="/" component={Root} />
         </AnimatedSwitch>
       </ConnectedRouter>
