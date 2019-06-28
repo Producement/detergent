@@ -315,6 +315,12 @@ function Orders() {
           description="Arriving in 2 days at 9:45"
           image={twodays}
         />
+        <Link to="/">
+          <div className="card order__more d-flex justify-content-center align-items-center">
+            <div className="text-muted font-weight-bolder">＋</div>
+            Order products
+          </div>
+        </Link>
       </div>
       <SimpleBottomNavigation />
     </div>
