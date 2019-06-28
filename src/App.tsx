@@ -10,6 +10,7 @@ import all from './img/fairy-platinum-all-in-one-fairy.webp';
 import pods from './img/fairy-non-bio-pods-fairy.webp';
 import soft from './img/fairy-fabric-softener-original-fairy.webp';
 import tablet from './img/tablet.png';
+import success from './img/success.svg';
 import { AnimatedSwitch, spring } from 'react-router-transition';
 
 import SimpleBottomNavigation from './SimpleBottomNavigation';
@@ -266,7 +267,7 @@ function Replenish() {
               </Link>
             </div>
             <div className="col-6">
-              <Link to="/confirm" className="btn btn-light btn-block">
+              <Link to="/loading" className="btn btn-light btn-block">
                 Confirm order
               </Link>
             </div>
@@ -297,6 +298,41 @@ function Settings() {
       </div>
       <div className="container min-vh-100 mt-3" />
       <SimpleBottomNavigation />
+    </div>
+  );
+}
+
+function Loading() {
+  return (
+    <div className="loading h-100 container pt-5">
+      <Link to="/success">
+        <h2 className="container text-light">Sending order</h2>
+        <p className="container text-light">
+          We’re verifying your payment details - <br /> please wait.
+        </p>
+        <div className="d-flex h-75 justify-content-center align-items-center">
+          <div className="lds-ring pb-5">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </Link>
+    </div>
+  );
+}
+
+function Success() {
+  return (
+    <div className="success h-100 container pt-5">
+      <Link to="/orders">
+        <h2 className="container text-dark">Order placed</h2>
+        <p className="container text-dark">Your order has been confirmed.</p>
+        <div className="d-flex h-75 justify-content-center align-items-center">
+          <img src={success} alt="Success" />
+        </div>
+      </Link>
     </div>
   );
 }
@@ -335,6 +371,8 @@ function App() {
           <Route path="/replenish" component={Replenish} />
           <Route path="/orders" component={Orders} />
           <Route path="/settings" component={Settings} />
+          <Route path="/loading" component={Loading} />
+          <Route path="/success" component={Success} />
           <Route path="/" component={Root} />
         </AnimatedSwitch>
       </ConnectedRouter>
