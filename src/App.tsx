@@ -292,7 +292,7 @@ function Orders() {
       </div>
       <div className="container card-columns min-vh-100 mt-3">
         <Order
-          title="Dreft"
+          title="Dreft Pods"
           description="Arriving tonight at 18:22"
           image={fourtyeight}
           bg="blue"
