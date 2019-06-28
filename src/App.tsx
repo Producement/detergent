@@ -207,7 +207,9 @@ function Details() {
           <button className="btn btn-outline-primary btn-block">Correct data</button>
         </div>
         <div className="col-6">
-          <button className="btn btn-primary btn-block">Replenish</button>
+          <Link to="/replenish" className="btn btn-primary btn-block">
+            Replenish
+          </Link>
         </div>
       </div>
     </div>

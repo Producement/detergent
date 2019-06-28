@@ -27,7 +27,9 @@ html,
   column-count: 1;
 }
 
-.card-columns a:hover {
+.card-columns a:hover,
+.loading a:hover,
+.success a:hover {
   text-decoration: none;
 }
 
