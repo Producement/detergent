@@ -22,12 +22,12 @@ function Top() {
   return (
     <div className="container pt-5 pb-4 bg-white top">
       <h1>Hi Emilee,</h1>
-      <p>You're running out of Draft Pods soon.</p>
+      <p>You're running out of Dreft Pods soon.</p>
       <Link to="/replenish" className="btn btn-outline-primary btn-block">
         Replenish all products
       </Link>
       <Link to="/replenish" className="btn btn-primary btn-block">
-        Replenish Draft Pods
+        Replenish Dreft Pods
       </Link>
     </div>
   );
@@ -100,73 +100,61 @@ function Cards() {
     <div className="container mb-1">
       <div className="card-columns mt-3">
         <Card
-          image={ambi}
-          title="Platinum Washing Up Liquid"
+          image={dreft}
+          title="Platinum All in One"
           brand="Dreft"
-          description="Washing up liquid"
+          description="Dishwasher tabs"
           amount={10}
         />
+        <Card image={ariel} title="Whites" brand="Ariel" description="Washing liquid" amount={30} />
         <Card
-          image={ariel}
-          title="Platinum Family Pack"
-          brand="Dreft"
-          description="Dishwasher tablets"
-          amount={30}
-        />
-        <Card
-          image={dreft}
-          title="Platinum Lemon"
-          brand="Dreft"
-          description="Washing up liquid"
+          image={ambi}
+          title="Lavender Vanilla & Comfort"
+          brand="Ambi"
+          description="Air Freshener"
           amount={40}
         />
         <Card
           image={oral}
-          title="Platinum All In One"
-          brand="Dreft"
+          title="3D White Brilliance"
+          brand="Oral B"
           description="Dishwasher tablets"
           amount={60}
         />
         <Card
           image={tide}
-          title="Non Bio Pods"
-          brand="Dreft"
-          description="Dishwasher tablets"
+          title="Ultra Oxi 4 in 1"
+          brand="Tide"
+          description="Laundry Pods"
           amount={70}
         />
         <Card
-          image={ambi}
-          title="Platinum Washing Up Liquid"
+          image={dreft}
+          title="Platinum All in One"
           brand="Dreft"
-          description="Washing up liquid"
+          description="Dishwasher tabs"
           amount={10}
         />
+        <Card image={ariel} title="Whites" brand="Ariel" description="Washing liquid" amount={30} />
         <Card
-          image={ariel}
-          title="Platinum Family Pack"
-          brand="Dreft"
-          description="Dishwasher tablets"
-          amount={30}
-        />
-        <Card
-          image={dreft}
-          title="Platinum Lemon"
-          brand="Dreft"
-          description="Washing up liquid"
+          image={ambi}
+          title="Lavender Vanilla & Comfort"
+          brand="Ambi"
+          description="Air Freshener"
           amount={40}
         />
         <Card
           image={oral}
-          title="Platinum All In One"
-          brand="Dreft"
+          title="3D White Brilliance"
+          brand="Oral B"
           description="Dishwasher tablets"
           amount={60}
         />
         <Card
           image={tide}
-          title="Non Bio Pods"
-          brand="Dreft"
-          description="Dishwasher tablets"
+          title="Ultra Oxi 4 in 1"
+          brand="Tide"
+          description="Laundry Pods"
           amount={70}
         />
       </div>
@@ -239,10 +227,10 @@ function Replenish() {
       <div className="container">
         <div className="card-columns pt-3">
           <Card
-            image={ambi}
-            title="Platinum Washing Up Liquid"
+            image={dreft}
+            title="Platinum All in One"
             brand="Dreft"
-            description="Washing up liquid"
+            description="Dishwasher tabs"
             amount={10}
             refill={90}
           />
@@ -304,14 +292,14 @@ function Orders() {
       </div>
       <div className="container card-columns min-vh-100 mt-3">
         <Order
-          title="Dreft, Tide and 2 more"
+          title="Dreft"
           description="Arriving tonight at 18:22"
           image={fourtyeight}
           bg="blue"
           text="light"
         />
         <Order
-          title="Oral B and Ambi Pur"
+          title="Oral B, Ambi Pur and 2 more"
           description="Arriving in 2 days at 9:45"
           image={twodays}
         />
