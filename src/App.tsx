@@ -3,12 +3,11 @@ import { ConnectedRouter } from 'connected-react-router';
 import store, { history } from './store';
 import { Provider } from 'react-redux';
 import { Link, Route, Switch } from 'react-router-dom';
-import platinum from './img/fairy-platinum-washing-up-liquid-fairy.webp';
-import family from './img/fairy-family-pack-fairy.webp';
-import lemon from './img/fairy-platinum-washing-up-liquid-lemon.webp';
-import all from './img/fairy-platinum-all-in-one-fairy.webp';
-import pods from './img/fairy-non-bio-pods-fairy.webp';
-import soft from './img/fairy-fabric-softener-original-fairy.webp';
+import ambi from './img/Logo_Ambi_4x.png';
+import ariel from './img/Logo_Ariel_4x.png';
+import dreft from './img/Logo_Dreft_4x.png';
+import oral from './img/Logo_Oral_4x.png';
+import tide from './img/Logo_Tide_4x.png';
 import tablet from './img/tablet.png';
 import success from './img/success.svg';
 import { AnimatedSwitch, spring } from 'react-router-transition';
@@ -98,88 +97,74 @@ function Cards() {
     <div className="container mb-1">
       <div className="card-columns mt-3">
         <Card
-          image={platinum}
+          image={ambi}
           title="Platinum Washing Up Liquid"
           brand="Dreft"
           description="Washing up liquid"
           amount={10}
         />
         <Card
-          image={family}
+          image={ariel}
           title="Platinum Family Pack"
           brand="Dreft"
           description="Dishwasher tablets"
           amount={30}
         />
         <Card
-          image={lemon}
+          image={dreft}
           title="Platinum Lemon"
           brand="Dreft"
           description="Washing up liquid"
           amount={40}
         />
         <Card
-          image={all}
+          image={oral}
           title="Platinum All In One"
           brand="Dreft"
           description="Dishwasher tablets"
           amount={60}
         />
         <Card
-          image={pods}
+          image={tide}
           title="Non Bio Pods"
           brand="Dreft"
           description="Dishwasher tablets"
           amount={70}
         />
         <Card
-          image={soft}
-          title="Fabric Softener"
-          brand="Dreft"
-          description="Fabric softener"
-          amount={80}
-        />
-        <Card
-          image={platinum}
+          image={ambi}
           title="Platinum Washing Up Liquid"
           brand="Dreft"
           description="Washing up liquid"
           amount={10}
         />
         <Card
-          image={family}
+          image={ariel}
           title="Platinum Family Pack"
           brand="Dreft"
           description="Dishwasher tablets"
           amount={30}
         />
         <Card
-          image={lemon}
+          image={dreft}
           title="Platinum Lemon"
           brand="Dreft"
           description="Washing up liquid"
           amount={40}
         />
         <Card
-          image={all}
+          image={oral}
           title="Platinum All In One"
           brand="Dreft"
           description="Dishwasher tablets"
           amount={60}
         />
         <Card
-          image={pods}
+          image={tide}
           title="Non Bio Pods"
           brand="Dreft"
           description="Dishwasher tablets"
           amount={70}
-        />
-        <Card
-          image={soft}
-          title="Fabric Softener"
-          brand="Dreft"
-          description="Fabric softener"
-          amount={80}
         />
       </div>
     </div>
@@ -249,7 +234,7 @@ function Replenish() {
       <div className="container">
         <div className="card-columns pt-3">
           <Card
-            image={platinum}
+            image={ambi}
             title="Platinum Washing Up Liquid"
             brand="Dreft"
             description="Washing up liquid"
